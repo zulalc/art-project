@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { FaArtstation, FaBehance, FaFigma } from "react-icons/fa";
 import ActionButton from "../navbar/ActionButton";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import HomePageArt from "@/assets/mcgill-library-y4PqRPqSako-unsplash.png";
+import HomePageArt from "@/assets/sea.jpg";
 import { SiAdobe } from "react-icons/si";
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
@@ -52,13 +52,13 @@ const Home = ({ setSelectedPage }: Props) => {
               hidden: { opacity: 0, x: -50 },
               visible: { opacity: 1, x: 0 },
             }}
-            className="mt-8 flex items-center gap-8"
+            className="mt-8 mb-8 flex items-center gap-8"
           >
             <ActionButton setSelectedPage={setSelectedPage}>
               Join Now
             </ActionButton>
             <AnchorLink
-              className="text-sm font-bold text-gray-100 underline hover:text-primary-500"
+              className="text-sm font-bold text-gray-400 underline hover:text-blue-500"
               onClick={() => setSelectedPage(SelectedPage.ContactUs)}
               href={`#${SelectedPage.ContactUs}`}
             >
@@ -66,22 +66,27 @@ const Home = ({ setSelectedPage }: Props) => {
             </AnchorLink>
           </motion.div>
         </div>
-
-        <div
-          className="flex basis-3/5 justify-center md:z-10
-              md:ml-40 md:mt-16 md:justify-items-end"
+        <motion.div
+          className="flex justify-center md:basis-2/5 md:ml-10"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
         >
-          <img alt="HomePageArt" src={HomePageArt} width={600} height={600} />
-        </div>
+          <img
+            className="rounded-2xl shadow-lg w-full max-w-md object-cover"
+            alt="HomePageArt"
+            src={HomePageArt}
+          />
+        </motion.div>
       </motion.div>
 
       {isAboveMediumScreens && (
-        <div className="h-[120px] w-full bg-primary-100 py-8">
+        <div className="h-[120px] w-full bg-blue-100 py-8">
           <div className="mx-auto w-5/6">
             <div className="flex w-3/5 items-center justify-between gap-6 text-gray-700">
-              <SiAdobe size={30} className="hover:text-blue-500 transition" />
-              <FaBehance size={30} className="hover:text-blue-500 transition" />
-              <FaFigma size={30} className="hover:text-blue-500 transition" />
+              <SiAdobe size={30} className="hover:text-blue-300 transition" />
+              <FaBehance size={30} className="hover:text-blue-300 transition" />
+              <FaFigma size={30} className="hover:text-blue-300 transition" />
             </div>
           </div>
         </div>
