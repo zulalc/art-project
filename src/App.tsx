@@ -3,6 +3,7 @@ import { SelectedPage } from "./utils/types";
 import Navbar from "./pages/navbar";
 import Footer from "./pages/footer";
 import Home from "./pages/home";
+import OurVision from "./pages/ourVision";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
@@ -30,6 +31,7 @@ function App() {
         setSelectedPage={setSelectedPage}
       />
       <Home setSelectedPage={setSelectedPage} />
+      <OurVision setSelectedPage={setSelectedPage} />
       <Footer />
     </div>
   );
