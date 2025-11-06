@@ -15,7 +15,7 @@ export interface VisionType {
   description: string;
 }
 
-export interface ClassType {
+export interface ExhibitionType {
   name: string;
   description?: string;
   image: string;
