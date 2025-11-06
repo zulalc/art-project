@@ -2,14 +2,14 @@ import type { IconType } from "react-icons";
 
 export const SelectedPage = {
   Home: "home",
-  Benefits: "benefits",
-  OurClasses: "ourclasses",
+  OurVision: "ourvision",
+  Exhibitions: "exhibitions",
   ContactUs: "contactus",
 } as const;
 
 export type SelectedPage = (typeof SelectedPage)[keyof typeof SelectedPage];
 
-export interface BenefitType {
+export interface VisionType {
   icon: IconType;
   title: string;
   description: string;

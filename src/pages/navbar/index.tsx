@@ -14,7 +14,7 @@ type Props = {
 const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const isAboveMediumScreens = mediaQuery("(min-width: 1060px)");
-  const navBackground = isTopOfPage ? "" : "bg-primary-100 drop-shadow";
+  const navBackground = isTopOfPage ? "" : "bg-blue-100 drop-shadow";
 
   return (
     <nav>
@@ -36,12 +36,12 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
                     setSelectedPage={setSelectedPage}
                   />
                   <Link
-                    page="Benefits"
+                    page="Our Vision"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
                   />
                   <Link
-                    page="Our Classes"
+                    page="Exhibitions"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
                   />
@@ -57,7 +57,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
               </div>
             ) : (
               <button
-                className="rounded-full bg-secondary-500 p-2"
+                className="rounded-full bg-blue-100 p-2"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
               >
                 <FaBars className="h-6 w-6 text-gray-400" />
@@ -68,7 +68,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
       </div>
 
       {!isAboveMediumScreens && isMenuOpen && (
-        <div className="fixed right-0 bottom-0 z-40 h-full w-[300px] bg-primary-100 drop-shadow-xl">
+        <div className="fixed right-0 bottom-0 z-40 h-full w-[300px] bg-blue-100 drop-shadow-xl">
           {/* CLOSE ICON */}
           <div className="flex justify-end p-12">
             <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -84,12 +84,12 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
               setSelectedPage={setSelectedPage}
             />
             <Link
-              page="Benefits"
+              page="Our Vision"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />
             <Link
-              page="Our Classes"
+              page="Exhibitions"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />
