@@ -4,6 +4,8 @@ import Navbar from "./pages/navbar";
 import Footer from "./pages/footer";
 import Home from "./pages/home";
 import OurVision from "./pages/ourVision";
+import Exhibitions from "./pages/exhibitions";
+import ContactUs from "./pages/contactUs";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
@@ -32,6 +34,8 @@ function App() {
       />
       <Home setSelectedPage={setSelectedPage} />
       <OurVision setSelectedPage={setSelectedPage} />
+      <Exhibitions setSelectedPage={setSelectedPage} />
+      <ContactUs setSelectedPage={setSelectedPage} />
       <Footer />
     </div>
   );
