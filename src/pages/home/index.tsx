@@ -13,7 +13,7 @@ type Props = {
 const Home = ({ setSelectedPage }: Props) => {
   const isAboveMediumScreens = mediaQuery("(min-width: 1060px)");
   return (
-    <section id="home" className="gap-16  py-10 md:h-full md:pb-0">
+    <section id="home" className="gap-16 mt-10 py-10 md:h-full md:pb-0">
       <motion.div
         className="mx-auto w-5/6 items-center justify-center md:flex md:h-5/6"
         onViewportEnter={() => setSelectedPage(SelectedPage.Home)}
@@ -81,7 +81,7 @@ const Home = ({ setSelectedPage }: Props) => {
       </motion.div>
 
       {isAboveMediumScreens && (
-        <div className="h-[120px] w-full bg-blue-100 py-8">
+        <div className="h-[120px] w-full bg-blue-100 mt-8 py-8">
           <div className="mx-auto w-5/6">
             <div className="flex w-3/5 items-center justify-between gap-6 text-gray-700">
               <SiAdobe size={30} className="hover:text-blue-300 transition" />

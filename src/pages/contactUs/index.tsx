@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import contactUsArt from "@/assets/mcgill-library-y4PqRPqSako-unsplash.png";
+import contactUsArt from "@/assets/ryan-stefan-5K98ScREEUY-unsplash.jpg";
 import { SelectedPage } from "@/utils/types";
 import { useForm } from "react-hook-form";
 
@@ -141,9 +141,18 @@ const ContactUs = ({ setSelectedPage }: Props) => {
               visible: { opacity: 1, y: 0 },
             }}
           >
-            <div className="w-full before:absolute before:-bottom-15 before:-right-10 before:z-[-1] md:before:content-evolvetext">
-              <img className="w-full" alt="contact-us-art" src={contactUsArt} />
-            </div>
+            <motion.div
+              className="flex justify-center md:basis-2/5 md:ml-10"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <img
+                className="rounded-2xl shadow-lg w-full max-w-md object-cover"
+                alt="ContactUsArt"
+                src={contactUsArt}
+              />
+            </motion.div>
           </motion.div>
         </div>
       </motion.div>

@@ -32,10 +32,12 @@ function App() {
         selectedPage={selectedPage}
         setSelectedPage={setSelectedPage}
       />
-      <Home setSelectedPage={setSelectedPage} />
-      <OurVision setSelectedPage={setSelectedPage} />
-      <Exhibitions setSelectedPage={setSelectedPage} />
-      <ContactUs setSelectedPage={setSelectedPage} />
+      <div className="overflow-x-hidden">
+        <Home setSelectedPage={setSelectedPage} />
+        <OurVision setSelectedPage={setSelectedPage} />
+        <Exhibitions setSelectedPage={setSelectedPage} />
+        <ContactUs setSelectedPage={setSelectedPage} />
+      </div>
       <Footer />
     </div>
   );

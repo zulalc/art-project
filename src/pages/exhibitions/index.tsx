@@ -41,9 +41,12 @@ type Props = {
 const Exhibitions = ({ setSelectedPage }: Props) => {
   const isMobile = mediaQuery("(max-width: 640px)");
   const isTablet = mediaQuery("(max-width: 1024px)");
-  const dragLimit = isMobile ? -1200 : isTablet ? -1500 : -1500;
+  const dragLimit = isMobile ? -800 : isTablet ? -1000 : -1500;
   return (
-    <section id="exhibitions" className="w-full bg-blue-100 py-40">
+    <section
+      id="exhibitions"
+      className="w-full bg-blue-100 py-20 md:py-40 overflow-x-hidden"
+    >
       <motion.div
         onViewportEnter={() => setSelectedPage(SelectedPage.Exhibitions)}
       >
@@ -73,10 +76,10 @@ const Exhibitions = ({ setSelectedPage }: Props) => {
           whileTap={{ cursor: "grabbing" }}
         >
           <motion.ul
-            className="flex gap-8 px-6 snap-x snap-mandatory"
+            className="flex gap-4 sm:gap-6 px-4 sm:px-6 snap-x snap-mandatory w-max"
             drag="x"
             dragConstraints={{ left: dragLimit, right: 0 }}
-            transition={{ type: "spring", stiffness: 120, damping: 25 }}
+            transition={{ type: "spring", stiffness: 80, damping: 30 }}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

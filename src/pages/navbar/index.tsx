@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "./Link";
 import { FaArtstation, FaBars } from "react-icons/fa";
 import { FaXmark } from "react-icons/fa6";
+import ActionButton from "./ActionButton";
 
 type Props = {
   isTopOfPage: boolean;
@@ -19,7 +20,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
   return (
     <nav>
       <div
-        className={`${navBackground} flex items-center justify-between fixed top-0 z-30 w-full py-6`}
+        className={`${navBackground} fixed top-0 z-50 w-full py-6 transition-colors duration-300 will-change-transform`}
       >
         <div className="flex items-center justify-between mx-auto w-5/6">
           <div className="flex items-center justify-between w-full gap-16">
@@ -53,14 +54,21 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
                 </div>
                 <div className="flex items-center justify-between gap-8">
                   <p>Sign In</p>
+                  <ActionButton setSelectedPage={setSelectedPage}>
+                    Become a Member
+                  </ActionButton>
                 </div>
               </div>
             ) : (
               <button
-                className="rounded-full bg-blue-100 p-2"
+                className="rounded-full bg-blue-100 p-2 transition"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
               >
-                <FaBars className="h-6 w-6 text-gray-400" />
+                {isMenuOpen ? (
+                  <FaXmark className="h-6 w-6 text-gray-400" />
+                ) : (
+                  <FaBars className="h-6 w-6 text-gray-400" />
+                )}
               </button>
             )}
           </div>
@@ -69,15 +77,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
 
       {!isAboveMediumScreens && isMenuOpen && (
         <div className="fixed right-0 bottom-0 z-40 h-full w-[300px] bg-blue-100 drop-shadow-xl">
-          {/* CLOSE ICON */}
-          <div className="flex justify-end p-12">
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
-              <FaXmark className="h-6 w-6 text-gray-400" />
-            </button>
-          </div>
-
-          {/* MENU ITEMS */}
-          <div className="ml-[33%] flex flex-col gap-10 text-2xl">
+          <div className="flex flex-col items-center mt-30 gap-8 text-2xl">
             <Link
               page="Home"
               selectedPage={selectedPage}
@@ -98,6 +98,9 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />
+            <button className="transition duration-500 hover:text-blue-300">
+              Sign In
+            </button>
           </div>
         </div>
       )}
